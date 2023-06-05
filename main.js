@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-mongoose.connect('mongodb://admin:secret@localhost:27017/collection?authSource=admin');
+mongoose.connect(process.env.MONGO_DB_URI, { useNewUrlParser: true });
 const db = mongoose.connection;
 
 db.on('err',err => console.log(err));
