@@ -1,7 +1,7 @@
-const express = require('express');
-const router = express.Router();
+import { Router } from 'express';
+import User from '../models/user.js';
 
-const User = require('../models/user');
+const router = Router();
 
 const getUser = async(req, res, next) => {
   let user;
@@ -71,5 +71,5 @@ router.delete('/:id', getUser, async (req, res) => {
   }
 });
 
-//Export 該Router
-module.exports = router;
+//Export 該 router
+export default router;

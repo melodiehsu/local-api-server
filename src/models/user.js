@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -23,5 +23,6 @@ const userSchema = new mongoose.Schema({
       required: true
   },
 })
+
 //匯出該資料表
-module.exports = mongoose.model('user' , userSchema);
+export default mongoose.model('user' , userSchema);
